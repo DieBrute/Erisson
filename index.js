@@ -3,7 +3,7 @@ const Eris = require("eris");
 const CONFIG = require('./config.json');
 const client = new Eris.CommandClient(CONFIG.DiscordToken, {intents :['all'], restMode: true }, {prefix : "!"});
 const { readdirSync } = require("fs")
-
+const plays = require('play-dl');
 const CommandFile = readdirSync("./commands").filter(File => File.endsWith(".js"))
 
 CommandFile.forEach(file => {
