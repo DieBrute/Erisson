@@ -1,7 +1,18 @@
 const { Interaction } = require("eris");
 const Eris = require("eris");
 const CONFIG = require('./config.json');
-const client = new Eris.Client(CONFIG.DiscordToken, {intents :['all'], restMode: true });
+const client = new Eris.CommandClient(CONFIG.DiscordToken, {intents :['all'], restMode: true }, {prefix : "!"});
+const { readdirSync } = require("fs")
+
+const CommandFile = readdirSync("./commands").filter(File => File.endsWith(".js"))
+
+CommandFile.forEach(file => {
+  const command = require(`./commands/${file}`)
+  client.registerCommand(command.name, async (message, args) => command.run(client, message, args), {
+    aliases: command.alias,
+    description: command.description
+  })
+})
 
 client.on('messageCreate', async message => {
     if (message.content === '!play') {
@@ -14,6 +25,8 @@ client.on('messageCreate', async message => {
         connection.play('https://cdn.discordapp.com/attachments/931487798110859265/939558715072339998/bootleg_montero_cover.mp3');
 
         connection.on('end', () => { channel.leave(); });
+    } else if(message.content === "!stop") {
+        client.disconnect();
     }
 })
 
