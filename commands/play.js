@@ -5,10 +5,10 @@ module.exports = {
     alias: [],
     run: async (client, message, args) => {
         try{
-
             const id = message.channel.guild.members.get(message.author.id).voiceState.channelID;
             if (id === null) return client.createMessage(message.channel.id, 'join a voice channel');
             const channel = await client.getRESTChannel(id);
+            channel.editPosition(1);
             const connection = await channel.join();
             
             let yt_info = await plays.search(args[0], {
@@ -20,7 +20,6 @@ module.exports = {
                     discordPlayerCompatibility: true,
                 }
             );
-            
             connection.play(stream.stream)
 
             connection.on('end', () => { channel.leave(); });
