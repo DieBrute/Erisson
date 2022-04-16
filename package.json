@@ -1,0 +1,30 @@
+{
+  "name": "erisson",
+  "version": "1.0.0",
+  "description": "Discord musical bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieBrute/Erisson.git"
+  },
+  "keywords": [
+    "bot",
+    "music",
+    "youtube",
+    "discord"
+  ],
+  "author": "Alexandre COMBEAU <a.combeau@unistra.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DieBrute/Erisson/issues"
+  },
+  "homepage": "https://github.com/DieBrute/Erisson#readme",
+  "dependencies": {
+    "eris": "^0.16.1",
+    "play-dl": "^1.9.4",
+    "weather-js": "^2.0.0"
+  }
+}
