@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/DieBrute/Erisson#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "eris": "^0.16.1",
     "play-dl": "^1.9.4",
     "weather-js": "^2.0.0"
