@@ -1,9 +1,19 @@
-const { Interaction } = require("eris");
-const Eris = require("eris");
-const CONFIG = require('./config.json');
-const client = new Eris.CommandClient(CONFIG.DiscordToken, {intents :['all'], restMode: true }, {prefix : "!"});
+require("dotenv").config();
+
+const Eris = require("eris")
 const { readdirSync } = require("fs")
-const plays = require('play-dl');
+const plays = require('play-dl')
+const { Interaction } = require("eris")
+
+const CONFIG = process.env
+
+const client = new Eris.CommandClient(
+  CONFIG.DISCORD_TOKEN,
+  {
+    intents :['all'],
+    restMode: true },
+    {prefix : "!"}
+  );
 const CommandFile = readdirSync("./commands").filter(File => File.endsWith(".js"))
 
 CommandFile.forEach(file => {
