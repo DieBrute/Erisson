@@ -4,7 +4,7 @@
   "description": "Discord musical bot",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "eris": "^0.16.1",
+    "log4js": "^6.4.5",
     "play-dl": "^1.9.4",
     "weather-js": "^2.0.0"
   }
