@@ -1,0 +1,27 @@
+{
+  "name": "erisson",
+  "version": "1.0.0",
+  "description": "Musical discord bot",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "eris": "^0.16.1",
+    "log4js": "^6.4.5",
+    "play-dl": "^1.9.4",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieBrute/Erisson.git"
+  },
+  "author": "Matthieu FUCHS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DieBrute/Erisson/issues"
+  },
+  "homepage": "https://github.com/DieBrute/Erisson#readme"
+}
