@@ -20,7 +20,13 @@ module.exports = {
                     discordPlayerCompatibility: true,
                 }
             );
+            console.log(yt_info[0].url);
+            console.log(yt_info[0].durationRaw);
             connection.play(stream.stream)
+            client.createMessage(message.channel.id, "Actually playing: \n"
+                + yt_info[0].title+ '\n'
+                + "Duration: " + (yt_info[0].durationRaw)+ '\n'
+                + '(url: ' + yt_info[0].url+' )');
 
             connection.on('end', () => { channel.leave(); });
         } catch (err) {
