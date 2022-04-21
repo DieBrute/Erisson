@@ -10,5 +10,9 @@ module.exports = {
         const channel = await client.getRESTChannel(id);
         const connection = await channel.join();
         connection.pause()
+        client.editStatus("Pause", {
+            name: `:pause_button:`,
+            type: 0
+        })
     }
 }

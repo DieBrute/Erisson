@@ -10,5 +10,9 @@ module.exports = {
         const channel = await client.getRESTChannel(id);
         const connection = await channel.join();
         connection.resume()
+        client.editStatus("Play", {
+            name: `:forward_arrow:`,
+            type: 0
+        })
     }
 }
