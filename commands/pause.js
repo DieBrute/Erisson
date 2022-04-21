@@ -1,6 +1,6 @@
 module.exports = {
     name: "pause",
-    description: "stops the music",
+    description: "pauses the music",
     alias: [],
     run: async (client, message, args) => {
         const id = message.channel.guild.members.get(message.author.id).voiceState.channelID;
@@ -11,7 +11,7 @@ module.exports = {
         const connection = await channel.join();
         connection.pause()
         client.editStatus("Pause", {
-            name: `:pause_button:`,
+            name: `Pause`,
             type: 0
         })
     }
