@@ -4,15 +4,20 @@
   "description": "Musical discord bot",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.0",
     "eris": "^0.16.1",
     "log4js": "^6.4.5",
+    "node-fetch": "^3.2.4",
     "play-dl": "^1.9.4",
     "weather-js": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "selenium-webdriver": "^4.1.2"
+  },
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "test:functionnal": "node tests/functionnal/test.js"
   },
   "repository": {
     "type": "git",
